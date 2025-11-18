@@ -1,0 +1,90 @@
+{
+  "ceremony": {
+    "name": "Umbra Protocol Payment Proof Circuit",
+    "version": "1.0.0",
+    "startDate": "2025-11-15T00:00:00Z",
+    "endDate": "2025-11-20T23:59:59Z",
+    "coordinatorPublicKey": "0x04a7c3d8e2f914b66d8237a45bc19e0528df63ac741950eb86fd28439a15c7be3",
+    "circuit": {
+      "name": "payment_proof",
+      "constraints": 28547,
+      "publicInputs": 5,
+      "privateInputs": 7,
+      "labels": 31892
+    }
+  },
+  "phase1": {
+    "powersOfTau": {
+      "power": 16,
+      "contributions": 65536,
+      "source": "Hermez Network Powers of Tau",
+      "hash": "b8e5e9f8a3c2d1e0f7b6a5948372615041302918273645546172839405162738"
+    },
+    "beacon": {
+      "type": "drand",
+      "round": 3847291,
+      "randomness": "8f7e6d5c4b3a29180716253443621908a7b6c5d4e3f2a1908172635445362718",
+      "timestamp": "2025-11-15T12:00:00Z"
+    }
+  },
+  "phase2": {
+    "contributions": [
+      {
+        "index": 1,
+        "name": "Coordinator Initial",
+        "timestamp": "2025-11-16T08:00:00Z",
+        "contributionHash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7a8b9c0d1e2f3a4",
+        "publicKey": "0x04d8f7e6c5b4a39281706152433140590817263544536271809a0b1c2d3e4f5a6"
+      },
+      {
+        "index": 2,
+        "name": "Community Contributor Alpha",
+        "timestamp": "2025-11-17T14:30:00Z",
+        "contributionHash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7a8b9c0d1e2f3a4b5",
+        "publicKey": "0x04e9f8a7b6c5d4e3f2a1908172635445362718091a2b3c4d5e6f7a8b9c0d1e2f3a"
+      },
+      {
+        "index": 3,
+        "name": "Community Contributor Beta",
+        "timestamp": "2025-11-18T09:15:00Z",
+        "contributionHash": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6",
+        "publicKey": "0x04f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1908172635445362718091a2b"
+      },
+      {
+        "index": 4,
+        "name": "Community Contributor Gamma",
+        "timestamp": "2025-11-19T16:45:00Z",
+        "contributionHash": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7",
+        "publicKey": "0x041a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b"
+      },
+      {
+        "index": 5,
+        "name": "Final Beacon Application",
+        "timestamp": "2025-11-20T20:00:00Z",
+        "contributionHash": "e5f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8",
+        "beacon": {
+          "type": "drand",
+          "round": 3851847,
+          "randomness": "9f8e7d6c5b4a3928170615243342190817263544536271809a0b1c2d3e4f5a6b"
+        }
+      }
+    ]
+  },
+  "verification": {
+    "finalHash": "f6a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9",
+    "verificationKeyHash": "a73c5d8e2f914b66d8237a45bc19e0528df63ac741950eb86fd28439a15c7be3",
+    "proofSystemInfo": {
+      "type": "groth16",
+      "curve": "bn254",
+      "securityLevel": 128
+    },
+    "verified": true,
+    "verifiedAt": "2025-11-20T22:00:00Z"
+  },
+  "artifacts": {
+    "r1cs": "payment_proof.r1cs",
+    "wasm": "payment_proof_js/payment_proof.wasm",
+    "zkey": "payment_proof_final.zkey",
+    "vkey": "verification_key.json"
+  }
+}

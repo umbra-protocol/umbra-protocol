@@ -1,0 +1,139 @@
+{
+  "circuit": {
+    "name": "payment_proof",
+    "version": "1.0.0",
+    "description": "Zero-knowledge payment proof circuit for Umbra Protocol",
+    "compiledAt": "2025-11-15T10:30:00Z",
+    "compiler": {
+      "name": "circom",
+      "version": "2.1.8",
+      "prime": "bn128"
+    }
+  },
+  "constraints": {
+    "total": 28547,
+    "linear": 12384,
+    "quadratic": 16163
+  },
+  "signals": {
+    "total": 31892,
+    "public": {
+      "inputs": 5,
+      "outputs": 1
+    },
+    "private": {
+      "inputs": 7,
+      "intermediate": 31879
+    }
+  },
+  "publicInputs": [
+    {
+      "index": 0,
+      "name": "minAmount",
+      "description": "Minimum payment amount required (in lamports)",
+      "type": "uint64"
+    },
+    {
+      "index": 1,
+      "name": "recipientPubKeyX",
+      "description": "Recipient's EdDSA public key X coordinate",
+      "type": "field"
+    },
+    {
+      "index": 2,
+      "name": "recipientPubKeyY",
+      "description": "Recipient's EdDSA public key Y coordinate",
+      "type": "field"
+    },
+    {
+      "index": 3,
+      "name": "maxBlockAge",
+      "description": "Maximum age of payment in seconds",
+      "type": "uint64"
+    },
+    {
+      "index": 4,
+      "name": "currentTime",
+      "description": "Current block timestamp",
+      "type": "uint64"
+    }
+  ],
+  "privateInputs": [
+    {
+      "index": 0,
+      "name": "actualAmount",
+      "description": "Actual payment amount (hidden)",
+      "type": "uint64"
+    },
+    {
+      "index": 1,
+      "name": "senderPubKeyX",
+      "description": "Sender's EdDSA public key X coordinate (hidden)",
+      "type": "field"
+    },
+    {
+      "index": 2,
+      "name": "senderPubKeyY",
+      "description": "Sender's EdDSA public key Y coordinate (hidden)",
+      "type": "field"
+    },
+    {
+      "index": 3,
+      "name": "paymentTime",
+      "description": "Timestamp when payment was made (hidden)",
+      "type": "uint64"
+    },
+    {
+      "index": 4,
+      "name": "R8x",
+      "description": "EdDSA signature R point X coordinate",
+      "type": "field"
+    },
+    {
+      "index": 5,
+      "name": "R8y",
+      "description": "EdDSA signature R point Y coordinate",
+      "type": "field"
+    },
+    {
+      "index": 6,
+      "name": "S",
+      "description": "EdDSA signature S scalar",
+      "type": "field"
+    }
+  ],
+  "templates": [
+    {
+      "name": "PaymentProof",
+      "instances": 1
+    },
+    {
+      "name": "GreaterEqThan",
+      "instances": 1,
+      "source": "circomlib/comparators.circom"
+    },
+    {
+      "name": "LessThan",
+      "instances": 1,
+      "source": "circomlib/comparators.circom"
+    },
+    {
+      "name": "Poseidon",
+      "instances": 2,
+      "source": "circomlib/poseidon.circom"
+    },
+    {
+      "name": "EdDSAPoseidonVerifier",
+      "instances": 1,
+      "source": "circomlib/eddsaposeidon.circom"
+    }
+  ],
+  "dependencies": {
+    "circomlib": "2.0.5"
+  },
+  "security": {
+    "fieldSize": "21888242871839275222246405745257275088548364400416034343698204186575808495617",
+    "curveOrder": "21888242871839275222246405745257275088696311157297823662689037894645226208583",
+    "securityLevel": 128
+  }
+}

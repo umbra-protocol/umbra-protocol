@@ -70,8 +70,8 @@ circom >= 2.1.0
 
 ```bash
 # Clone and install
-git clone https://github.com/umbra-protocol/umbra.git
-cd umbra
+git clone https://github.com/umbra-protocol/umbra-protocol.git
+cd umbra-protocol
 
 cd circuits && npm install && cd ..
 cd sdk && npm install && cd ..

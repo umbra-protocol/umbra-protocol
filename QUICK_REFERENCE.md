@@ -6,7 +6,7 @@ One-page reference for all commands and operations.
 
 ### Deploy Everything (Docker)
 ```bash
-cd "Desktop/solana projects/x402-zk-payments/deploy"
+cd deploy
 docker-compose up -d
 ```
 
@@ -373,7 +373,7 @@ cd sdk
 rm -rf dist/ node_modules/
 
 # All at once
-cd "Desktop/solana projects/x402-zk-payments"
+cd x402-zk-payments
 rm -rf circuits/build circuits/node_modules
 rm -rf contracts/target
 rm -rf prover/prover
